@@ -1,0 +1,10 @@
+import {DatabaseSync} from 'node:sqlite';
+import {mkdirSync,readFileSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {resolve,dirname} from 'node:path';
+const source=process.env.DB_PATH||resolve('data/store.sqlite');
+const target=process.argv[2]||resolve('backups/store-'+new Date().toISOString().replaceAll(':','-')+'.sqlite');
+mkdirSync(dirname(target),{recursive:true});
+const db=new DatabaseSync(source);db.prepare('VACUUM INTO ?').run(target);db.close();
+const check=new DatabaseSync(target,{readOnly:true});const result=check.prepare('PRAGMA integrity_check').get();check.close();if(result.integrity_check!=='ok')throw Error('Backup integrity check failed.');
+const digest=createHash('sha256').update(readFileSync(target)).digest('hex');writeFileSync(target+'.sha256',digest+'\n',{flag:'wx'});console.log('Verified backup created:',target);

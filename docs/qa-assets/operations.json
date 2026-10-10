@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-10",
+  "scope": "Local demo and temporary fixture databases only",
+  "checks": [
+    {
+      "check": "development_smoke",
+      "status": "PASS",
+      "command": "npm run dev; SITE_URL=http://127.0.0.1:3000 npm run smoke",
+      "evidence": "Both Vite and watched API restarted; all eight routes/assets returned success."
+    },
+    {
+      "check": "built_app_smoke",
+      "status": "PASS",
+      "command": "SITE_URL=http://127.0.0.1:3001 npm run smoke",
+      "evidence": "Built SSR application, API and all eight smoke routes/assets returned success. Local execution only."
+    },
+    {
+      "check": "development_shopping",
+      "status": "PASS",
+      "command": "Chromium functional request against dev server",
+      "evidence": "Product loaded; Add to cart updated the bag."
+    },
+    {
+      "check": "keyboard_zoom",
+      "status": "PASS",
+      "command": "Chromium functional request against dev server",
+      "evidence": "Focusable enlarged image scrolled with ArrowDown; Escape closed zoom."
+    },
+    {
+      "check": "metadata_and_csp",
+      "status": "PASS",
+      "command": "Node fetch/assert against built server",
+      "evidence": "Eight distinct initial titles; JSON-LD hash matches CSP; /server and unknown API deny access."
+    },
+    {
+      "check": "backup_integrity",
+      "status": "PASS",
+      "command": "SQLite fixture + scripts/backup.js",
+      "evidence": "VACUUM INTO snapshot passed integrity_check and generated checksum."
+    },
+    {
+      "check": "backup_nonoverwrite",
+      "status": "PASS",
+      "command": "Second scripts/backup.js call to same snapshot",
+      "evidence": "Existing backup refused rather than overwritten."
+    },
+    {
+      "check": "restore_stop_guard",
+      "status": "PASS",
+      "command": "scripts/restore.js without --server-stopped",
+      "evidence": "Restore refused without operator stopped-server assertion."
+    },
+    {
+      "check": "restore_contents",
+      "status": "PASS",
+      "command": "scripts/restore.js with --server-stopped; fixture SELECT assertion",
+      "evidence": "Restored fixture row exactly matched source."
+    },
+    {
+      "check": "restore_bad_checksum",
+      "status": "PASS",
+      "command": "Corrupt checksum companion; scripts/restore.js",
+      "evidence": "Restore rejected checksum mismatch; fixture files only."
+    },
+    {
+      "check": "dependency_install",
+      "status": "PASS",
+      "command": "npm ci --cache /tmp/sudathi-npm-cache --no-audit --no-fund",
+      "evidence": "213 packages installed with frozen lockfile."
+    },
+    {
+      "check": "optional_browser_setup",
+      "status": "PASS",
+      "command": "bash scripts/setup-cloud-browsers.sh",
+      "evidence": "Repeated browser preparation succeeded; TLS and APT signature verification retained."
+    },
+    {
+      "check": "field_vitals",
+      "status": "UNVERIFIED",
+      "command": "npm run vitals",
+      "evidence": "No real-user field samples; p75 targets are not established."
+    },
+    {
+      "check": "hosted_deployment",
+      "status": "UNRUN",
+      "command": "SITE_URL=https://actual-origin npm run smoke",
+      "evidence": "No actual deployed origin supplied. Docker execution, uptime service and hosted rollback were not run."
+    }
+  ]
+}

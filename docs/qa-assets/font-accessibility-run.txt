@@ -1,0 +1,29 @@
+
+> jai-hind-sarees@1.0.0 test:e2e
+> playwright test --grep A D H I J|K D:
+
+[WebServer] (node:37450) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:37477) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:37504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium-desktop] › tests/storefront.spec.js:7:1 › A D H I J: load, fonts, critical requests, imagery, section order, error-free homepage (2.1s)
+  ✓  2 [chromium-desktop] › tests/storefront.spec.js:17:1 › K D: axe keyboard/form/contrast checks on homepage, collection and product (5.4s)
+(node:37743) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [chromium-android-emulation] › tests/storefront.spec.js:7:1 › A D H I J: load, fonts, critical requests, imagery, section order, error-free homepage (4.4s)
+  ✓  4 [chromium-android-emulation] › tests/storefront.spec.js:17:1 › K D: axe keyboard/form/contrast checks on homepage, collection and product (4.9s)
+(node:37977) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [firefox] › tests/storefront.spec.js:7:1 › A D H I J: load, fonts, critical requests, imagery, section order, error-free homepage (2.7s)
+  ✓  6 [firefox] › tests/storefront.spec.js:17:1 › K D: axe keyboard/form/contrast checks on homepage, collection and product (6.9s)
+(node:38328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  7 [webkit-ios-emulation] › tests/storefront.spec.js:7:1 › A D H I J: load, fonts, critical requests, imagery, section order, error-free homepage (5.5s)
+  ✓  8 [webkit-ios-emulation] › tests/storefront.spec.js:17:1 › K D: axe keyboard/form/contrast checks on homepage, collection and product (6.8s)
+
+  8 passed (46.8s)

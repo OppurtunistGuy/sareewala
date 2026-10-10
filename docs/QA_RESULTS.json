@@ -1,0 +1,949 @@
+{
+  "date": "2026-10-10",
+  "scope": "Local server-backed demo; live launch blocked",
+  "counts": {
+    "PASS": 83,
+    "PARTIAL": 11,
+    "DEMO": 22,
+    "BLOCKED": 13,
+    "N/A": 1
+  },
+  "sections": [
+    {
+      "id": "A",
+      "title": "App & Initial Load",
+      "items": [
+        {
+          "id": "A1",
+          "requirement": "Homepage loads without blank screens or crashes",
+          "status": "PASS",
+          "evidence": "Browser A/D/H/I/J: homepage renders server HTML and hydrates; API/product content loads."
+        },
+        {
+          "id": "A2",
+          "requirement": "Logo, navigation, banners and product images render correctly",
+          "status": "PASS",
+          "evidence": "Browser A/D/H/I/J: logo/navigation and every visible image checked for natural dimensions."
+        },
+        {
+          "id": "A3",
+          "requirement": "No console errors or failed critical network requests",
+          "status": "PASS",
+          "evidence": "Browser A/D/H/I/J: pageerror and failed-request listeners are empty on normal loads."
+        },
+        {
+          "id": "A4",
+          "requirement": "App promotion strip displays correctly and can be dismissed",
+          "status": "PARTIAL",
+          "evidence": "Dismissible store-promotion strip persists after refresh. No verified Jai Hind app/listing/download count exists; app-download claims are withheld."
+        },
+        {
+          "id": "A5",
+          "requirement": "Refresh and direct URL visits work without errors",
+          "status": "PASS",
+          "evidence": "Browser A/B, C/F, E/I/J/S and checkout/order tests cover refresh and direct product/collection/account/order URLs."
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Banners & Promotions",
+      "items": [
+        {
+          "id": "B1",
+          "requirement": "Hero images are sharp and correctly cropped on all screens",
+          "status": "PASS",
+          "evidence": "Desktop/mobile captures and all viewport tests review object-fit crops; responsive local WebP candidates."
+        },
+        {
+          "id": "B2",
+          "requirement": "Every promotional CTA navigates to its intended destination",
+          "status": "PASS",
+          "evidence": "Hero CTA and category/collection CTAs resolve to the intended collection; directions use the verified Place ID."
+        },
+        {
+          "id": "B3",
+          "requirement": "Carousel controls, swipe gestures and indicators work",
+          "status": "PASS",
+          "evidence": "Browser A/B tests previous/next buttons, indicators and pointer-based swipe changes."
+        },
+        {
+          "id": "B4",
+          "requirement": "Sale claims, discount percentages and offer dates are accurate",
+          "status": "DEMO",
+          "evidence": "Demo prices/MRP and WELCOME10 dates/conditions agree with the server fixtures; actual merchant offer approval is outstanding."
+        },
+        {
+          "id": "B5",
+          "requirement": "No text overlaps or clipped promotional content",
+          "status": "PASS",
+          "evidence": "Viewport/reflow checks and screenshot review show promotional text without horizontal overflow."
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Categories & Collections",
+      "items": [
+        {
+          "id": "C1",
+          "requirement": "Women, Men, Kids and other category links work",
+          "status": "PASS",
+          "evidence": "Browser C/F visits Women/Men/Kids and fallback; Men/Kids honestly show no available inventory."
+        },
+        {
+          "id": "C2",
+          "requirement": "Category images and labels match their destination",
+          "status": "PASS",
+          "evidence": "Collection labels and buttons use matching filters; category tabs resolve to their own routes."
+        },
+        {
+          "id": "C3",
+          "requirement": "Product listings show the correct category",
+          "status": "DEMO",
+          "evidence": "Eight demo Women products match their category; no invented Men/Kids products. Real catalogue still required."
+        },
+        {
+          "id": "C4",
+          "requirement": "Filters and sorting update results correctly",
+          "status": "PASS",
+          "evidence": "Browser C/F verifies combined collection/colour/price filters and all four sort modes."
+        },
+        {
+          "id": "C5",
+          "requirement": "Empty collections show a useful fallback",
+          "status": "PASS",
+          "evidence": "Unavailable categories and zero matches show a useful explanation and reset/explore CTA."
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Design Consistency",
+      "items": [
+        {
+          "id": "D1",
+          "requirement": "Poppins is applied consistently, including after font loading",
+          "status": "PASS",
+          "evidence": "Browser font-family assertion and self-hosted latin Poppins 400/500/600/700, including editorial emphasis."
+        },
+        {
+          "id": "D2",
+          "requirement": "Deep blue, white and yellow match the design system",
+          "status": "PARTIAL",
+          "evidence": "White #fff, primary blue #153f73 and yellow #f9d65b match the supplied brief. Exact external design-system comparison blocked by inaccessible reference."
+        },
+        {
+          "id": "D3",
+          "requirement": "Buttons, spacing, radii and typography are consistent",
+          "status": "PASS",
+          "evidence": "Common button/form/dialog styles and responsive screenshot review; shared spacing/type tokens."
+        },
+        {
+          "id": "D4",
+          "requirement": "Hover, focus, active, loading and disabled states are polished",
+          "status": "PASS",
+          "evidence": "Disabled out-of-stock options, focus-visible outlines, hover states, skeletons, busy controls and error recovery reviewed."
+        },
+        {
+          "id": "D5",
+          "requirement": "No layout shifts, stretched photos or overlapping components",
+          "status": "PASS",
+          "evidence": "Viewport/long-name/reflow checks; lab CLS 0.011 mobile and 0.004 desktop; no stretched images in captures."
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "title": "E-commerce Product Experience",
+      "items": [
+        {
+          "id": "E1",
+          "requirement": "Product cards show correct names, images and prices",
+          "status": "DEMO",
+          "evidence": "API catalog assertions and browser product cards match sample names/photos/paise prices; merchant catalogue not supplied."
+        },
+        {
+          "id": "E2",
+          "requirement": "Product detail pages open for every active item",
+          "status": "PASS",
+          "evidence": "Browser E/I/J/S opens all eight active product routes and missing-product fallback."
+        },
+        {
+          "id": "E3",
+          "requirement": "Size, colour and variant selection work correctly",
+          "status": "DEMO",
+          "evidence": "Free-size standard variant works; each product has its labelled colour and unavailable premium variant. Real variants require merchant data."
+        },
+        {
+          "id": "E4",
+          "requirement": "Unavailable variants cannot be purchased",
+          "status": "PASS",
+          "evidence": "Native disabled property is asserted; API rejects zero-stock/unknown variants regardless of client state."
+        },
+        {
+          "id": "E5",
+          "requirement": "Add to Cart and Buy Now perform the correct actions",
+          "status": "PASS",
+          "evidence": "Add-to-cart changes the saved bag; Buy Now navigates with the selected variant to checkout."
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "title": "Filters & Sorting",
+      "items": [
+        {
+          "id": "F1",
+          "requirement": "Price, size, colour and category filters work",
+          "status": "PASS",
+          "evidence": "Price, category, size and colour filter controls implemented; combined collection/colour/size/minimum/maximum-price browser checks and empty state."
+        },
+        {
+          "id": "F2",
+          "requirement": "Multiple filters can be combined and cleared",
+          "status": "PASS",
+          "evidence": "Browser C/F combines filters, checks one/zero matches, then clears to eight styles."
+        },
+        {
+          "id": "F3",
+          "requirement": "Sorting by price, newest and popularity is correct",
+          "status": "PASS",
+          "evidence": "Ascending/descending price, newest and popularity each assert the expected first product."
+        },
+        {
+          "id": "F4",
+          "requirement": "Result counts update after filtering",
+          "status": "PASS",
+          "evidence": "Live result counts assert eight/one/zero and update with route filters."
+        },
+        {
+          "id": "F5",
+          "requirement": "Filters remain usable on mobile",
+          "status": "PASS",
+          "evidence": "Android/WebKit projects open mobile filters and use collection/colour/price/sort controls."
+        }
+      ]
+    },
+    {
+      "id": "G",
+      "title": "Global Navigation",
+      "items": [
+        {
+          "id": "G1",
+          "requirement": "Header links and logo navigate correctly",
+          "status": "PASS",
+          "evidence": "Logo returns home; header collection/account/store links and direct routes reviewed."
+        },
+        {
+          "id": "G2",
+          "requirement": "Search, account, wishlist and cart icons work",
+          "status": "PASS",
+          "evidence": "Search, account page, wishlist drawer and bag drawer exercised in browser suites."
+        },
+        {
+          "id": "G3",
+          "requirement": "Mobile menu opens, closes and navigates correctly",
+          "status": "PASS",
+          "evidence": "Mobile menu opens/closes, exposes category and account controls, and closes after route navigation."
+        },
+        {
+          "id": "G4",
+          "requirement": "Dropdown menus work with mouse, touch and keyboard",
+          "status": "PASS",
+          "evidence": "Hover dropdowns, touch buttons and ArrowDown/Escape keyboard handling checked."
+        },
+        {
+          "id": "G5",
+          "requirement": "Sticky header does not obscure content",
+          "status": "PASS",
+          "evidence": "Sticky header and scroll-padding reviewed; product/form controls remain usable after scrolling."
+        }
+      ]
+    },
+    {
+      "id": "H",
+      "title": "Homepage Sections",
+      "items": [
+        {
+          "id": "H1",
+          "requirement": "Every section matches the approved visual design",
+          "status": "BLOCKED",
+          "evidence": "Exact approved visual design is unavailable: gitreverse reference returns proxy 403 and no approved baseline was supplied."
+        },
+        {
+          "id": "H2",
+          "requirement": "Sections appear in the correct order",
+          "status": "PASS",
+          "evidence": "Browser section-order assertion and capture review: hero, trust, collections, offer, top picks, editorial, store, newsletter."
+        },
+        {
+          "id": "H3",
+          "requirement": "Top Picks, sale banners and collection grids populate",
+          "status": "DEMO",
+          "evidence": "Top picks, offer banner and four collection cards populate with labelled demo imagery/prices."
+        },
+        {
+          "id": "H4",
+          "requirement": "Trust badges and promotional messaging are accurate",
+          "status": "PASS",
+          "evidence": "Physical-store claims use verified address/hours/Google rating; no unverified app ratings, testimonials or delivery badges."
+        },
+        {
+          "id": "H5",
+          "requirement": "No duplicate, empty or broken homepage modules",
+          "status": "PASS",
+          "evidence": "Rendered section/card counts and all-image checks find no broken or accidental empty homepage modules."
+        }
+      ]
+    },
+    {
+      "id": "I",
+      "title": "Images & Media",
+      "items": [
+        {
+          "id": "I1",
+          "requirement": "All product and lifestyle images load successfully",
+          "status": "PASS",
+          "evidence": "All images are scrolled into view and checked complete/naturalWidth > 0 in each engine."
+        },
+        {
+          "id": "I2",
+          "requirement": "Responsive images use appropriate sizes and formats",
+          "status": "PASS",
+          "evidence": "320/480/960/original WebP srcsets, correct hero sizes and viewport-before-preload avoid duplicate oversized requests."
+        },
+        {
+          "id": "I3",
+          "requirement": "Lazy loading works without leaving blank cards",
+          "status": "PASS",
+          "evidence": "Lazy product/editorial images load as scrolled into view; failure fallback has a working retry button."
+        },
+        {
+          "id": "I4",
+          "requirement": "Image zoom or galleries work where implemented",
+          "status": "PASS",
+          "evidence": "Product zoom opens accessible modal and Escape closes it; each product has one honest sample photo."
+        },
+        {
+          "id": "I5",
+          "requirement": "Meaningful images have appropriate alt text",
+          "status": "PASS",
+          "evidence": "Browser assertions require meaningful nonempty alt text; decorative icons are hidden from assistive technology."
+        }
+      ]
+    },
+    {
+      "id": "J",
+      "title": "JavaScript & Interactions",
+      "items": [
+        {
+          "id": "J1",
+          "requirement": "No uncaught JavaScript exceptions",
+          "status": "PASS",
+          "evidence": "Normal-load browser pageerror collection stays empty; API errors use visible recovery paths."
+        },
+        {
+          "id": "J2",
+          "requirement": "No hydration warnings or broken interactive components",
+          "status": "PASS",
+          "evidence": "Server-rendered homepage hydrates without recorded exceptions; carousel/menu/filters/cart remain interactive."
+        },
+        {
+          "id": "J3",
+          "requirement": "Rapid clicks do not duplicate actions",
+          "status": "PASS",
+          "evidence": "Rapid add/newsletter/order clicks produce one logical action/request/order; idempotency enforced server-side."
+        },
+        {
+          "id": "J4",
+          "requirement": "Dialogs, menus and drawers open and close reliably",
+          "status": "PASS",
+          "evidence": "Repeated modal/drawer open/close and Escape handling checked, with focus returned to trigger."
+        },
+        {
+          "id": "J5",
+          "requirement": "Back and forward browser navigation work correctly",
+          "status": "PASS",
+          "evidence": "Browser E/I/J/S exercises back to product and forward to collection, plus direct missing-page fallback."
+        }
+      ]
+    },
+    {
+      "id": "K",
+      "title": "Keyboard Accessibility",
+      "items": [
+        {
+          "id": "K1",
+          "requirement": "All actionable elements are keyboard reachable",
+          "status": "PASS",
+          "evidence": "Keyboard dropdown, modal and form controls exercised; native elements and visible focus states."
+        },
+        {
+          "id": "K2",
+          "requirement": "Tab order follows the visual layout",
+          "status": "PASS",
+          "evidence": "Shared dialog focus order and native form sequence reviewed; no positive tabindex hacks."
+        },
+        {
+          "id": "K3",
+          "requirement": "Focus indicators are visible",
+          "status": "PASS",
+          "evidence": "Focus-visible outlines retained for buttons/links/inputs/selects; keyboard screenshot/manual review."
+        },
+        {
+          "id": "K4",
+          "requirement": "Escape closes dialogs and menus where appropriate",
+          "status": "PASS",
+          "evidence": "Escape closes navigation dropdowns, dialogs, search and filters; explicit close buttons also available."
+        },
+        {
+          "id": "K5",
+          "requirement": "No keyboard traps occur",
+          "status": "PASS",
+          "evidence": "Dialogs intentionally contain Tab focus, with Escape/close exits and restored trigger focus; browser G/K checks."
+        }
+      ]
+    },
+    {
+      "id": "L",
+      "title": "Loading & Performance",
+      "items": [
+        {
+          "id": "L1",
+          "requirement": "Core Web Vitals are measured on mobile and desktop",
+          "status": "PARTIAL",
+          "evidence": "Mobile/desktop Lighthouse lab LCP/CLS/TBT measured and consented LCP/INP/CLS collection added. No real-user mobile/desktop cohort exists yet."
+        },
+        {
+          "id": "L2",
+          "requirement": "LCP target is 2.5 seconds or less at the 75th percentile",
+          "status": "BLOCKED",
+          "evidence": "p75 LCP needs real deployed traffic. Final mobile lab is 2.38 s and desktop 0.57 s; lab values cannot establish field p75."
+        },
+        {
+          "id": "L3",
+          "requirement": "INP target is 200 ms or less at the 75th percentile",
+          "status": "BLOCKED",
+          "evidence": "p75 INP requires real-user interactions. Consent-gated collection exists; Lighthouse TBT is not INP."
+        },
+        {
+          "id": "L4",
+          "requirement": "CLS target is 0.1 or less at the 75th percentile",
+          "status": "BLOCKED",
+          "evidence": "p75 CLS requires real deployed traffic. Lab CLS is below 0.1 on both profiles, but no field distribution is available."
+        },
+        {
+          "id": "L5",
+          "requirement": "Slow connections show usable loading and error states",
+          "status": "PASS",
+          "evidence": "Delayed API test shows skeleton; interrupted API and image requests expose retry and recover. API timeout is 15 seconds."
+        }
+      ]
+    },
+    {
+      "id": "M",
+      "title": "Mobile Responsiveness",
+      "items": [
+        {
+          "id": "M1",
+          "requirement": "Layouts work at 320, 360, 375, 390 and 430 px",
+          "status": "PASS",
+          "evidence": "Browser M/X explicitly checks 320, 360, 375, 390, 430, 760, 1024 and 1440 px."
+        },
+        {
+          "id": "M2",
+          "requirement": "No unwanted horizontal scrolling",
+          "status": "PASS",
+          "evidence": "scrollWidth <= innerWidth asserted at all required sizes, landscape and enlarged reflow."
+        },
+        {
+          "id": "M3",
+          "requirement": "Text, product cards and CTAs remain readable",
+          "status": "PASS",
+          "evidence": "Mobile screenshots reviewed; cards/text/buttons wrap and remain readable at the minimum width."
+        },
+        {
+          "id": "M4",
+          "requirement": "Tap targets are large enough and spaced correctly",
+          "status": "PASS",
+          "evidence": "Critical buttons/fields have 44 px height; adjacent smaller controls retain spacing. Lighthouse target-size audit and mobile interactions reviewed."
+        },
+        {
+          "id": "M5",
+          "requirement": "Mobile search, menu, filters and checkout are usable",
+          "status": "PASS",
+          "evidence": "Mobile projects exercise search submit, navigation/dropdown, filters and complete checkout."
+        }
+      ]
+    },
+    {
+      "id": "N",
+      "title": "Newsletter & Notifications",
+      "items": [
+        {
+          "id": "N1",
+          "requirement": "Newsletter accepts valid email addresses",
+          "status": "DEMO",
+          "evidence": "Valid email plus explicit consent records interest in SQLite; no email provider exists and UI says no marketing emails will be sent."
+        },
+        {
+          "id": "N2",
+          "requirement": "Invalid and duplicate submissions are handled",
+          "status": "PASS",
+          "evidence": "Browser native email validation and API invalid/duplicate checks; duplicate returns 409."
+        },
+        {
+          "id": "N3",
+          "requirement": "Success and failure messages are accurate",
+          "status": "PASS",
+          "evidence": "Success states say interest recorded only; failure/duplicate text comes from backend response."
+        },
+        {
+          "id": "N4",
+          "requirement": "Submission does not create duplicate requests",
+          "status": "PASS",
+          "evidence": "Synchronous submit lock and disabled loading state; rapid-click browser test asserts exactly one request."
+        },
+        {
+          "id": "N5",
+          "requirement": "Marketing consent is collected where required",
+          "status": "PASS",
+          "evidence": "Required newsletter checkbox and API consent=true validation; optional analytics has a separate opt-in."
+        }
+      ]
+    },
+    {
+      "id": "O",
+      "title": "Offers & Discounts",
+      "items": [
+        {
+          "id": "O1",
+          "requirement": "MRP, selling price and discount calculation agree",
+          "status": "DEMO",
+          "evidence": "MRP/current price in paise and rounded percentage match demo fixtures; client totals recomputed by API."
+        },
+        {
+          "id": "O2",
+          "requirement": "Coupon eligibility and expiry rules are enforced",
+          "status": "DEMO",
+          "evidence": "Demo WELCOME10 eligibility/minimum/expiry tested, including expired fixture; real promotion policy unapproved."
+        },
+        {
+          "id": "O3",
+          "requirement": "Coupon cannot be redeemed beyond permitted limits",
+          "status": "DEMO",
+          "evidence": "First-order-only server rule rejects reuse and post-order coupon attempts; cap ₹300 and maximum quantities checked."
+        },
+        {
+          "id": "O4",
+          "requirement": "Offer stacking follows configured business rules",
+          "status": "DEMO",
+          "evidence": "Exactly one demo coupon permitted; stacked/invalid codes rejected, no implicit offer stacking."
+        },
+        {
+          "id": "O5",
+          "requirement": "Cart and checkout totals reflect valid discounts",
+          "status": "DEMO",
+          "evidence": "Browser checkout quote and API exact arithmetic assertions include valid discount, shipping and included demo GST."
+        }
+      ]
+    },
+    {
+      "id": "P",
+      "title": "Payments & Checkout",
+      "items": [
+        {
+          "id": "P1",
+          "requirement": "Shipping address and PIN code validation work",
+          "status": "PASS",
+          "evidence": "Required address fields and six-digit nonzero-leading PIN checked client/server; invalid PIN rejected."
+        },
+        {
+          "id": "P2",
+          "requirement": "Shipping charges and taxes calculate correctly",
+          "status": "DEMO",
+          "evidence": "Demo inclusive 5% GST, ₹79 shipping and free-shipping threshold after discount checked. Merchant tax/shipping rules missing."
+        },
+        {
+          "id": "P3",
+          "requirement": "UPI, cards, wallets or COD work where enabled",
+          "status": "BLOCKED",
+          "evidence": "UPI/card/wallet/COD simulations pass API tests; no payment gateway or approved COD fulfilment is connected. No real charge occurs."
+        },
+        {
+          "id": "P4",
+          "requirement": "Failed, cancelled and pending payments are handled safely",
+          "status": "DEMO",
+          "evidence": "Failed/cancelled/pending simulation creates no order or stock change; pending can confirm; failed key cannot be reused."
+        },
+        {
+          "id": "P5",
+          "requirement": "One successful payment produces exactly one order",
+          "status": "DEMO",
+          "evidence": "Concurrent/duplicate successful simulation creates one stored order and one stock deduction. Real gateway webhook/reconciliation still required."
+        }
+      ]
+    },
+    {
+      "id": "Q",
+      "title": "Quality & Content",
+      "items": [
+        {
+          "id": "Q1",
+          "requirement": "No spelling mistakes or placeholder content",
+          "status": "DEMO",
+          "evidence": "Business branding/address copy reviewed. Sample catalogue/prices/policies remain expressly labelled demo, so this cannot pass a live no-placeholder launch gate."
+        },
+        {
+          "id": "Q2",
+          "requirement": "Product descriptions and specifications are accurate",
+          "status": "BLOCKED",
+          "evidence": "Real product descriptions/specifications/photos have not been supplied or merchant-approved; current fixtures are visibly sample data."
+        },
+        {
+          "id": "Q3",
+          "requirement": "Sizes, fabric and care information are available",
+          "status": "DEMO",
+          "evidence": "Fabric, free-size length/blouse and care fields are present for each demo product; real accuracy requires merchant confirmation."
+        },
+        {
+          "id": "Q4",
+          "requirement": "Promotional claims and ratings are substantiated",
+          "status": "PASS",
+          "evidence": "Google Maps 3.6/5 from 20 reviews and daily 10 AM–9 PM substantiated in BUSINESS_SOURCES.md; demo discount claims show conditions."
+        },
+        {
+          "id": "Q5",
+          "requirement": "No dead links or outdated policy text",
+          "status": "DEMO",
+          "evidence": "Internal route/policy/support controls work; directions use real listing. Policy dialogs truthfully identify unapproved demo terms."
+        }
+      ]
+    },
+    {
+      "id": "R",
+      "title": "Returns & Refunds",
+      "items": [
+        {
+          "id": "R1",
+          "requirement": "Return policy and eligibility are clearly shown",
+          "status": "DEMO",
+          "evidence": "Seven-day demo eligibility and non-returnable exclusions shown on product, policy and order pages; real policy unapproved."
+        },
+        {
+          "id": "R2",
+          "requirement": "Return request workflow works where supported",
+          "status": "DEMO",
+          "evidence": "Owned confirmed demo order return can be requested once; expiry/nonreturnable/ownership API assertions pass."
+        },
+        {
+          "id": "R3",
+          "requirement": "Refund status reflects backend records accurately",
+          "status": "DEMO",
+          "evidence": "Requests persist as requested; refund remains not issued. UI never invents a completed refund."
+        },
+        {
+          "id": "R4",
+          "requirement": "Non-returnable products are labelled correctly",
+          "status": "DEMO",
+          "evidence": "Non-returnable demo item labelled on cards/details/order and excluded server-side."
+        },
+        {
+          "id": "R5",
+          "requirement": "Support and order-help links work",
+          "status": "PASS",
+          "evidence": "Order-help/account controls and Google directions links resolve. No unverified phone/contact channel is invented."
+        }
+      ]
+    },
+    {
+      "id": "S",
+      "title": "Search & SEO",
+      "items": [
+        {
+          "id": "S1",
+          "requirement": "Search returns relevant products and suggestions",
+          "status": "PASS",
+          "evidence": "Search product suggestions and relevant collection results; product/collection routes preserve queries."
+        },
+        {
+          "id": "S2",
+          "requirement": "Misspellings and no-results searches are handled",
+          "status": "PASS",
+          "evidence": "Edit-distance-one typo test “silkk” finds four silk styles; empty searches show reset suggestions."
+        },
+        {
+          "id": "S3",
+          "requirement": "Page titles and meta descriptions are unique",
+          "status": "PASS",
+          "evidence": "Product/account/checkout/category titles and descriptions set on server and client; metadata escapes interpolated text."
+        },
+        {
+          "id": "S4",
+          "requirement": "Canonical URLs, sitemap and robots rules are correct",
+          "status": "BLOCKED",
+          "evidence": "Deployed HTTPS origin missing. Demo stays noindex; robots disallows all without origin and sitemap returns explanatory 503. Live canonical/sitemap validation pending."
+        },
+        {
+          "id": "S5",
+          "requirement": "Product structured data uses valid real product details",
+          "status": "BLOCKED",
+          "evidence": "Real product data missing, so no fabricated Product/Offer schema is emitted. Verified ClothingStore structured data is present."
+        }
+      ]
+    },
+    {
+      "id": "T",
+      "title": "Tracking & Analytics",
+      "items": [
+        {
+          "id": "T1",
+          "requirement": "Page view, product view and search events fire correctly",
+          "status": "PASS",
+          "evidence": "Consent-gated page_view/product_view/search events implemented; browser observes view events and API strips raw search text/PII."
+        },
+        {
+          "id": "T2",
+          "requirement": "Add-to-cart and begin-checkout events fire once",
+          "status": "PASS",
+          "evidence": "Browser rapid-click/checkout test observes one add/begin event per action; server event IDs deduplicate."
+        },
+        {
+          "id": "T3",
+          "requirement": "Purchase events fire only for confirmed orders",
+          "status": "PASS",
+          "evidence": "Browser observes one purchase only after confirmed owned order; API rejects nonexistent/foreign/unconfirmed orders."
+        },
+        {
+          "id": "T4",
+          "requirement": "Analytics never exposes passwords or payment secrets",
+          "status": "PASS",
+          "evidence": "API whitelists identifiers/counts/totals/routes and strips password/email/card/query fields; client test inspects payloads."
+        },
+        {
+          "id": "T5",
+          "requirement": "Consent preferences are respected",
+          "status": "PASS",
+          "evidence": "Essential-only sends no analytics; enabling emits events and disabling stops them. Newsletter consent is independent."
+        }
+      ]
+    },
+    {
+      "id": "U",
+      "title": "User Accounts & Wishlist",
+      "items": [
+        {
+          "id": "U1",
+          "requirement": "Login, registration and logout work",
+          "status": "PASS",
+          "evidence": "API login/register/logout and browser account/order journey checked; salt+scrypt password hash and HttpOnly cookie."
+        },
+        {
+          "id": "U2",
+          "requirement": "OTP or password reset works if supported",
+          "status": "N/A",
+          "evidence": "OTP and password reset are not offered in this demo; no deceptive reset/OTP controls. Choose real login/email provider before adding recovery."
+        },
+        {
+          "id": "U3",
+          "requirement": "Account sessions persist and expire correctly",
+          "status": "PASS",
+          "evidence": "Session survives reload and expires after seven days; API expiration fixture denies protected order access."
+        },
+        {
+          "id": "U4",
+          "requirement": "Wishlist add/remove and persistence work",
+          "status": "PASS",
+          "evidence": "Anonymous wishlist survives reload; account wishlist persists server-side and is isolated between users."
+        },
+        {
+          "id": "U5",
+          "requirement": "Users cannot access another customer's account or orders",
+          "status": "PASS",
+          "evidence": "Server authorisation prevents reading/returning another customer’s order and segregates wishlists; not a client-only guard."
+        }
+      ]
+    },
+    {
+      "id": "V",
+      "title": "Visual Regression",
+      "items": [
+        {
+          "id": "V1",
+          "requirement": "Desktop screenshots match approved reference layouts",
+          "status": "BLOCKED",
+          "evidence": "Current desktop captures exist, but no approved reference screenshot/baseline was supplied; cannot assert a reference match."
+        },
+        {
+          "id": "V2",
+          "requirement": "Mobile screenshots match approved reference layouts",
+          "status": "BLOCKED",
+          "evidence": "Current mobile captures exist, but no approved reference screenshot/baseline was supplied; cannot assert a reference match."
+        },
+        {
+          "id": "V3",
+          "requirement": "No accidental typography or spacing regressions",
+          "status": "PARTIAL",
+          "evidence": "Current typography/spacing reviewed with screenshots and viewport tests; approved regression baseline remains unavailable."
+        },
+        {
+          "id": "V4",
+          "requirement": "All modal, error, hover and empty states are reviewed",
+          "status": "PASS",
+          "evidence": "Policy/privacy/empty bag/wishlist/zoom/form/checkout states checked with axe; API/image errors and busy/disabled states reviewed."
+        },
+        {
+          "id": "V5",
+          "requirement": "Image crops and banners remain consistent after changes",
+          "status": "PARTIAL",
+          "evidence": "Current hero/gallery crops reviewed at required sizes; future approved-baseline comparison remains pending."
+        }
+      ]
+    },
+    {
+      "id": "W",
+      "title": "Web Browser Compatibility",
+      "items": [
+        {
+          "id": "W1",
+          "requirement": "Chrome and Edge desktop flows work",
+          "status": "PARTIAL",
+          "evidence": "System Chromium desktop passes. Actual branded Chrome and Microsoft Edge binaries were not installed/tested."
+        },
+        {
+          "id": "W2",
+          "requirement": "Firefox desktop flows work",
+          "status": "PASS",
+          "evidence": "Playwright Firefox desktop suite passes after supported runner permissions resolved its user-namespace crash."
+        },
+        {
+          "id": "W3",
+          "requirement": "Safari on iOS works",
+          "status": "PARTIAL",
+          "evidence": "Playwright WebKit iPhone 13 emulation passes; this is not physical Safari/iOS verification."
+        },
+        {
+          "id": "W4",
+          "requirement": "Chrome on Android works",
+          "status": "PARTIAL",
+          "evidence": "Chromium Pixel 7 emulation passes; physical Android Chrome verification remains outstanding."
+        },
+        {
+          "id": "W5",
+          "requirement": "Touch, mouse, keyboard and browser back work",
+          "status": "PASS",
+          "evidence": "Mouse clicks, mobile/touch-style controls, pointer swipe, keyboard and back/forward checked in available engine projects."
+        }
+      ]
+    },
+    {
+      "id": "X",
+      "title": "Cross-device Edge Cases",
+      "items": [
+        {
+          "id": "X1",
+          "requirement": "Portrait and landscape layouts work",
+          "status": "PASS",
+          "evidence": "Required portrait widths and 844×390 landscape checked for overflow and visible controls."
+        },
+        {
+          "id": "X2",
+          "requirement": "Zoom at 200% does not hide essential functions",
+          "status": "PARTIAL",
+          "evidence": "200% CSS zoom/reflow and enlarged text checks keep checkout usable. Actual browser toolbar zoom/physical-device accessibility review remains pending."
+        },
+        {
+          "id": "X3",
+          "requirement": "Long names and translated text do not overflow",
+          "status": "PASS",
+          "evidence": "Injected long Hindi/English product and escaped account names at 320 px remain inside viewport; no HTML execution."
+        },
+        {
+          "id": "X4",
+          "requirement": "Slow or interrupted network requests recover gracefully",
+          "status": "PASS",
+          "evidence": "Aborted catalog/image requests expose recoverable state and retry restores content; delayed catalog shows loading skeleton."
+        },
+        {
+          "id": "X5",
+          "requirement": "Refresh during cart or checkout does not corrupt state",
+          "status": "PASS",
+          "evidence": "Bag reload and checkout refresh preserve valid lines and checkout idempotency key; malformed storage resets safely."
+        }
+      ]
+    },
+    {
+      "id": "Y",
+      "title": "Your Security & Data",
+      "items": [
+        {
+          "id": "Y1",
+          "requirement": "HTTPS is enforced and no mixed content loads",
+          "status": "PARTIAL",
+          "evidence": "Production-mode tests verify HTTP→HTTPS redirect, Secure session cookie and HSTS behind configured trusted proxy. Actual HTTPS deployment/mixed-content crawl pending."
+        },
+        {
+          "id": "Y2",
+          "requirement": "Sensitive API keys are not exposed in frontend bundles",
+          "status": "PASS",
+          "evidence": "No provider secrets were configured or embedded; built client is static app code, with private server/DB/env excluded. /server is denied."
+        },
+        {
+          "id": "Y3",
+          "requirement": "Authentication and authorisation are enforced server-side",
+          "status": "PASS",
+          "evidence": "Auth, ownership, stock/price/coupon and checkout eligibility enforced in API with expired-session/foreign-order tests."
+        },
+        {
+          "id": "Y4",
+          "requirement": "Forms and APIs resist common injection and XSS attacks",
+          "status": "PASS",
+          "evidence": "Parameterized SQLite, body limits, CSRF/origin/rate controls and hashed inline script CSP; SQL injection and rendered XSS-name tests pass."
+        },
+        {
+          "id": "Y5",
+          "requirement": "Payments, personal data and logs follow applicable privacy rules",
+          "status": "BLOCKED",
+          "evidence": "Demo has no payment credentials and analytics strips PII; live privacy retention/deletion/contact, payment processor obligations and merchant policy approval remain unresolved."
+        }
+      ]
+    },
+    {
+      "id": "Z",
+      "title": "Zero-critical-defect Launch Gate",
+      "items": [
+        {
+          "id": "Z1",
+          "requirement": "All critical shopping journeys pass end to end",
+          "status": "DEMO",
+          "evidence": "All critical DEMO journeys pass (account→product→checkout→order→return); real buying/email/refund journeys are externally blocked."
+        },
+        {
+          "id": "Z2",
+          "requirement": "No open P0 or P1 defects remain",
+          "status": "BLOCKED",
+          "evidence": "Demo defects found in this task were fixed. Live checkout/catalog/policies/deployment/device gates remain release blockers, so no live zero-P0/P1 claim."
+        },
+        {
+          "id": "Z3",
+          "requirement": "No broken critical links or missing product assets",
+          "status": "PASS",
+          "evidence": "Local smoke routes/assets pass and every visible photo loads; no broken critical demo internal routes/assets found."
+        },
+        {
+          "id": "Z4",
+          "requirement": "Monitoring, backups and rollback procedures are ready",
+          "status": "PARTIAL",
+          "evidence": "Health/smoke and documented monitoring/rollback exist; fixture backup/restore integrity, non-overwrite and checksum refusal pass. Hosted alerts/offsite backups/rollback not provisioned."
+        },
+        {
+          "id": "Z5",
+          "requirement": "Production smoke tests pass after deployment",
+          "status": "BLOCKED",
+          "evidence": "GitHub URL is not a deployment URL. Local production-build smoke passes; post-deployment smoke cannot run without the real hosted origin."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,500 @@
+{
+  "date": "2026-10-10",
+  "node": "24.19.0",
+  "playwright": "1.64.0",
+  "versions": {
+    "system_chromium": "154.0.8037.57",
+    "firefox": "157.0",
+    "webkit": "27.2"
+  },
+  "api": {
+    "command": "npm run test:api",
+    "tests": 37,
+    "passed": 37,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0,
+    "log": "api-test-run.txt"
+  },
+  "browser": {
+    "command": "CROSS_BROWSER=true PLAYWRIGHT_BROWSERS_PATH=/workspace/playwright-browsers XDG_CONFIG_HOME=/workspace/browser-config XDG_CACHE_HOME=/workspace/browser-cache npm run test:e2e",
+    "tests": 64,
+    "passed": 64,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0,
+    "projects": {
+      "chromium-desktop": 16,
+      "chromium-android-emulation": 16,
+      "firefox": 16,
+      "webkit-ios-emulation": 16
+    },
+    "log": "full-test-run.txt",
+    "results": [
+      {
+        "number": 1,
+        "project": "chromium-desktop",
+        "test": "tests/edge-cases.spec.js:5:1 \u203a X Y: long translated names reflow and account markup is escaped",
+        "duration": "2.9s",
+        "status": "passed"
+      },
+      {
+        "number": 2,
+        "project": "chromium-desktop",
+        "test": "tests/edge-cases.spec.js:6:1 \u203a L X: slow loading skeleton, zoom reflow and refresh during checkout preserve bag",
+        "duration": "7.5s",
+        "status": "passed"
+      },
+      {
+        "number": 3,
+        "project": "chromium-desktop",
+        "test": "tests/edge-cases.spec.js:7:1 \u203a N T: duplicate newsletter clicks are suppressed and checkout events fire once",
+        "duration": "2.9s",
+        "status": "passed"
+      },
+      {
+        "number": 4,
+        "project": "chromium-desktop",
+        "test": "tests/edge-cases.spec.js:8:1 \u203a K V: policy, empty drawer, form, checkout and zoom dialog states pass accessibility checks",
+        "duration": "17.6s",
+        "status": "passed"
+      },
+      {
+        "number": 5,
+        "project": "chromium-desktop",
+        "test": "tests/storefront.spec.js:7:1 \u203a A D H I J: load, fonts, critical requests, imagery, section order, error-free homepage",
+        "duration": "4.4s",
+        "status": "passed"
+      },
+      {
+        "number": 6,
+        "project": "chromium-desktop",
+        "test": "tests/storefront.spec.js:8:1 \u203a A B: dismiss strip persists; banners controls and pointer swipe work",
+        "duration": "1.6s",
+        "status": "passed"
+      },
+      {
+        "number": 7,
+        "project": "chromium-desktop",
+        "test": "tests/storefront.spec.js:9:1 \u203a C F: categories, combinations, price filters, counts, empty fallback and all sorting modes",
+        "duration": "5.3s",
+        "status": "passed"
+      },
+      {
+        "number": 8,
+        "project": "chromium-desktop",
+        "test": "tests/storefront.spec.js:10:1 \u203a E I J S: all product routes, variants, unavailable choices, zoom, search misspelling and history",
+        "duration": "7.8s",
+        "status": "passed"
+      },
+      {
+        "number": 9,
+        "project": "chromium-desktop",
+        "test": "tests/storefront.spec.js:11:1 \u203a G K: menu/dropdowns, keyboard operation, Escape, focus trap and restored focus",
+        "duration": "3.5s",
+        "status": "passed"
+      },
+      {
+        "number": 10,
+        "project": "chromium-desktop",
+        "test": "tests/storefront.spec.js:12:1 \u203a J U X: rapid click protection, cart persistence, safe corrupt storage, wishlist persistence",
+        "duration": "6.2s",
+        "status": "passed"
+      },
+      {
+        "number": 11,
+        "project": "chromium-desktop",
+        "test": "tests/storefront.spec.js:13:1 \u203a N: newsletter consent, invalid, successful and duplicate messages accurately reflect server",
+        "duration": "2.1s",
+        "status": "passed"
+      },
+      {
+        "number": 12,
+        "project": "chromium-desktop",
+        "test": "tests/storefront.spec.js:14:1 \u203a O P R U: register, buy now, coupon, pending then success, one order and return request",
+        "duration": "7.3s",
+        "status": "passed"
+      },
+      {
+        "number": 13,
+        "project": "chromium-desktop",
+        "test": "tests/storefront.spec.js:15:1 \u203a M X: required viewport widths, landscape, 200% text zoom, long names and no overflow",
+        "duration": "4.3s",
+        "status": "passed"
+      },
+      {
+        "number": 14,
+        "project": "chromium-desktop",
+        "test": "tests/storefront.spec.js:16:1 \u203a A L X: API interruption shows retry and recovers; offline image has useful fallback",
+        "duration": "2.9s",
+        "status": "passed"
+      },
+      {
+        "number": 15,
+        "project": "chromium-desktop",
+        "test": "tests/storefront.spec.js:17:1 \u203a K D: axe keyboard/form/contrast checks on homepage, collection and product",
+        "duration": "11.1s",
+        "status": "passed"
+      },
+      {
+        "number": 16,
+        "project": "chromium-desktop",
+        "test": "tests/storefront.spec.js:18:1 \u203a T: consent blocks analytics and allowed events avoid PII",
+        "duration": "4.3s",
+        "status": "passed"
+      },
+      {
+        "number": 17,
+        "project": "chromium-android-emulation",
+        "test": "tests/edge-cases.spec.js:5:1 \u203a X Y: long translated names reflow and account markup is escaped",
+        "duration": "4.5s",
+        "status": "passed"
+      },
+      {
+        "number": 18,
+        "project": "chromium-android-emulation",
+        "test": "tests/edge-cases.spec.js:6:1 \u203a L X: slow loading skeleton, zoom reflow and refresh during checkout preserve bag",
+        "duration": "12.0s",
+        "status": "passed"
+      },
+      {
+        "number": 19,
+        "project": "chromium-android-emulation",
+        "test": "tests/edge-cases.spec.js:7:1 \u203a N T: duplicate newsletter clicks are suppressed and checkout events fire once",
+        "duration": "7.9s",
+        "status": "passed"
+      },
+      {
+        "number": 20,
+        "project": "chromium-android-emulation",
+        "test": "tests/edge-cases.spec.js:8:1 \u203a K V: policy, empty drawer, form, checkout and zoom dialog states pass accessibility checks",
+        "duration": "16.6s",
+        "status": "passed"
+      },
+      {
+        "number": 21,
+        "project": "chromium-android-emulation",
+        "test": "tests/storefront.spec.js:7:1 \u203a A D H I J: load, fonts, critical requests, imagery, section order, error-free homepage",
+        "duration": "9.0s",
+        "status": "passed"
+      },
+      {
+        "number": 22,
+        "project": "chromium-android-emulation",
+        "test": "tests/storefront.spec.js:8:1 \u203a A B: dismiss strip persists; banners controls and pointer swipe work",
+        "duration": "3.1s",
+        "status": "passed"
+      },
+      {
+        "number": 23,
+        "project": "chromium-android-emulation",
+        "test": "tests/storefront.spec.js:9:1 \u203a C F: categories, combinations, price filters, counts, empty fallback and all sorting modes",
+        "duration": "4.5s",
+        "status": "passed"
+      },
+      {
+        "number": 24,
+        "project": "chromium-android-emulation",
+        "test": "tests/storefront.spec.js:10:1 \u203a E I J S: all product routes, variants, unavailable choices, zoom, search misspelling and history",
+        "duration": "5.7s",
+        "status": "passed"
+      },
+      {
+        "number": 25,
+        "project": "chromium-android-emulation",
+        "test": "tests/storefront.spec.js:11:1 \u203a G K: menu/dropdowns, keyboard operation, Escape, focus trap and restored focus",
+        "duration": "1.4s",
+        "status": "passed"
+      },
+      {
+        "number": 26,
+        "project": "chromium-android-emulation",
+        "test": "tests/storefront.spec.js:12:1 \u203a J U X: rapid click protection, cart persistence, safe corrupt storage, wishlist persistence",
+        "duration": "2.3s",
+        "status": "passed"
+      },
+      {
+        "number": 27,
+        "project": "chromium-android-emulation",
+        "test": "tests/storefront.spec.js:13:1 \u203a N: newsletter consent, invalid, successful and duplicate messages accurately reflect server",
+        "duration": "2.6s",
+        "status": "passed"
+      },
+      {
+        "number": 28,
+        "project": "chromium-android-emulation",
+        "test": "tests/storefront.spec.js:14:1 \u203a O P R U: register, buy now, coupon, pending then success, one order and return request",
+        "duration": "4.4s",
+        "status": "passed"
+      },
+      {
+        "number": 29,
+        "project": "chromium-android-emulation",
+        "test": "tests/storefront.spec.js:15:1 \u203a M X: required viewport widths, landscape, 200% text zoom, long names and no overflow",
+        "duration": "4.4s",
+        "status": "passed"
+      },
+      {
+        "number": 30,
+        "project": "chromium-android-emulation",
+        "test": "tests/storefront.spec.js:16:1 \u203a A L X: API interruption shows retry and recovers; offline image has useful fallback",
+        "duration": "2.7s",
+        "status": "passed"
+      },
+      {
+        "number": 31,
+        "project": "chromium-android-emulation",
+        "test": "tests/storefront.spec.js:17:1 \u203a K D: axe keyboard/form/contrast checks on homepage, collection and product",
+        "duration": "7.1s",
+        "status": "passed"
+      },
+      {
+        "number": 32,
+        "project": "chromium-android-emulation",
+        "test": "tests/storefront.spec.js:18:1 \u203a T: consent blocks analytics and allowed events avoid PII",
+        "duration": "1.6s",
+        "status": "passed"
+      },
+      {
+        "number": 33,
+        "project": "firefox",
+        "test": "tests/edge-cases.spec.js:5:1 \u203a X Y: long translated names reflow and account markup is escaped",
+        "duration": "5.0s",
+        "status": "passed"
+      },
+      {
+        "number": 34,
+        "project": "firefox",
+        "test": "tests/edge-cases.spec.js:6:1 \u203a L X: slow loading skeleton, zoom reflow and refresh during checkout preserve bag",
+        "duration": "4.2s",
+        "status": "passed"
+      },
+      {
+        "number": 35,
+        "project": "firefox",
+        "test": "tests/edge-cases.spec.js:7:1 \u203a N T: duplicate newsletter clicks are suppressed and checkout events fire once",
+        "duration": "3.2s",
+        "status": "passed"
+      },
+      {
+        "number": 36,
+        "project": "firefox",
+        "test": "tests/edge-cases.spec.js:8:1 \u203a K V: policy, empty drawer, form, checkout and zoom dialog states pass accessibility checks",
+        "duration": "15.2s",
+        "status": "passed"
+      },
+      {
+        "number": 37,
+        "project": "firefox",
+        "test": "tests/storefront.spec.js:7:1 \u203a A D H I J: load, fonts, critical requests, imagery, section order, error-free homepage",
+        "duration": "2.6s",
+        "status": "passed"
+      },
+      {
+        "number": 38,
+        "project": "firefox",
+        "test": "tests/storefront.spec.js:8:1 \u203a A B: dismiss strip persists; banners controls and pointer swipe work",
+        "duration": "2.2s",
+        "status": "passed"
+      },
+      {
+        "number": 39,
+        "project": "firefox",
+        "test": "tests/storefront.spec.js:9:1 \u203a C F: categories, combinations, price filters, counts, empty fallback and all sorting modes",
+        "duration": "2.7s",
+        "status": "passed"
+      },
+      {
+        "number": 40,
+        "project": "firefox",
+        "test": "tests/storefront.spec.js:10:1 \u203a E I J S: all product routes, variants, unavailable choices, zoom, search misspelling and history",
+        "duration": "6.5s",
+        "status": "passed"
+      },
+      {
+        "number": 41,
+        "project": "firefox",
+        "test": "tests/storefront.spec.js:11:1 \u203a G K: menu/dropdowns, keyboard operation, Escape, focus trap and restored focus",
+        "duration": "1.8s",
+        "status": "passed"
+      },
+      {
+        "number": 42,
+        "project": "firefox",
+        "test": "tests/storefront.spec.js:12:1 \u203a J U X: rapid click protection, cart persistence, safe corrupt storage, wishlist persistence",
+        "duration": "3.2s",
+        "status": "passed"
+      },
+      {
+        "number": 43,
+        "project": "firefox",
+        "test": "tests/storefront.spec.js:13:1 \u203a N: newsletter consent, invalid, successful and duplicate messages accurately reflect server",
+        "duration": "2.2s",
+        "status": "passed"
+      },
+      {
+        "number": 44,
+        "project": "firefox",
+        "test": "tests/storefront.spec.js:14:1 \u203a O P R U: register, buy now, coupon, pending then success, one order and return request",
+        "duration": "4.4s",
+        "status": "passed"
+      },
+      {
+        "number": 45,
+        "project": "firefox",
+        "test": "tests/storefront.spec.js:15:1 \u203a M X: required viewport widths, landscape, 200% text zoom, long names and no overflow",
+        "duration": "2.4s",
+        "status": "passed"
+      },
+      {
+        "number": 46,
+        "project": "firefox",
+        "test": "tests/storefront.spec.js:16:1 \u203a A L X: API interruption shows retry and recovers; offline image has useful fallback",
+        "duration": "1.2s",
+        "status": "passed"
+      },
+      {
+        "number": 47,
+        "project": "firefox",
+        "test": "tests/storefront.spec.js:17:1 \u203a K D: axe keyboard/form/contrast checks on homepage, collection and product",
+        "duration": "9.6s",
+        "status": "passed"
+      },
+      {
+        "number": 48,
+        "project": "firefox",
+        "test": "tests/storefront.spec.js:18:1 \u203a T: consent blocks analytics and allowed events avoid PII",
+        "duration": "1.8s",
+        "status": "passed"
+      },
+      {
+        "number": 49,
+        "project": "webkit-ios-emulation",
+        "test": "tests/edge-cases.spec.js:5:1 \u203a X Y: long translated names reflow and account markup is escaped",
+        "duration": "5.3s",
+        "status": "passed"
+      },
+      {
+        "number": 50,
+        "project": "webkit-ios-emulation",
+        "test": "tests/edge-cases.spec.js:6:1 \u203a L X: slow loading skeleton, zoom reflow and refresh during checkout preserve bag",
+        "duration": "9.1s",
+        "status": "passed"
+      },
+      {
+        "number": 51,
+        "project": "webkit-ios-emulation",
+        "test": "tests/edge-cases.spec.js:7:1 \u203a N T: duplicate newsletter clicks are suppressed and checkout events fire once",
+        "duration": "5.2s",
+        "status": "passed"
+      },
+      {
+        "number": 52,
+        "project": "webkit-ios-emulation",
+        "test": "tests/edge-cases.spec.js:8:1 \u203a K V: policy, empty drawer, form, checkout and zoom dialog states pass accessibility checks",
+        "duration": "15.0s",
+        "status": "passed"
+      },
+      {
+        "number": 53,
+        "project": "webkit-ios-emulation",
+        "test": "tests/storefront.spec.js:7:1 \u203a A D H I J: load, fonts, critical requests, imagery, section order, error-free homepage",
+        "duration": "7.5s",
+        "status": "passed"
+      },
+      {
+        "number": 54,
+        "project": "webkit-ios-emulation",
+        "test": "tests/storefront.spec.js:8:1 \u203a A B: dismiss strip persists; banners controls and pointer swipe work",
+        "duration": "3.7s",
+        "status": "passed"
+      },
+      {
+        "number": 55,
+        "project": "webkit-ios-emulation",
+        "test": "tests/storefront.spec.js:9:1 \u203a C F: categories, combinations, price filters, counts, empty fallback and all sorting modes",
+        "duration": "3.3s",
+        "status": "passed"
+      },
+      {
+        "number": 56,
+        "project": "webkit-ios-emulation",
+        "test": "tests/storefront.spec.js:10:1 \u203a E I J S: all product routes, variants, unavailable choices, zoom, search misspelling and history",
+        "duration": "7.2s",
+        "status": "passed"
+      },
+      {
+        "number": 57,
+        "project": "webkit-ios-emulation",
+        "test": "tests/storefront.spec.js:11:1 \u203a G K: menu/dropdowns, keyboard operation, Escape, focus trap and restored focus",
+        "duration": "2.5s",
+        "status": "passed"
+      },
+      {
+        "number": 58,
+        "project": "webkit-ios-emulation",
+        "test": "tests/storefront.spec.js:12:1 \u203a J U X: rapid click protection, cart persistence, safe corrupt storage, wishlist persistence",
+        "duration": "5.6s",
+        "status": "passed"
+      },
+      {
+        "number": 59,
+        "project": "webkit-ios-emulation",
+        "test": "tests/storefront.spec.js:13:1 \u203a N: newsletter consent, invalid, successful and duplicate messages accurately reflect server",
+        "duration": "2.9s",
+        "status": "passed"
+      },
+      {
+        "number": 60,
+        "project": "webkit-ios-emulation",
+        "test": "tests/storefront.spec.js:14:1 \u203a O P R U: register, buy now, coupon, pending then success, one order and return request",
+        "duration": "5.2s",
+        "status": "passed"
+      },
+      {
+        "number": 61,
+        "project": "webkit-ios-emulation",
+        "test": "tests/storefront.spec.js:15:1 \u203a M X: required viewport widths, landscape, 200% text zoom, long names and no overflow",
+        "duration": "8.3s",
+        "status": "passed"
+      },
+      {
+        "number": 62,
+        "project": "webkit-ios-emulation",
+        "test": "tests/storefront.spec.js:16:1 \u203a A L X: API interruption shows retry and recovers; offline image has useful fallback",
+        "duration": "2.6s",
+        "status": "passed"
+      },
+      {
+        "number": 63,
+        "project": "webkit-ios-emulation",
+        "test": "tests/storefront.spec.js:17:1 \u203a K D: axe keyboard/form/contrast checks on homepage, collection and product",
+        "duration": "6.2s",
+        "status": "passed"
+      },
+      {
+        "number": 64,
+        "project": "webkit-ios-emulation",
+        "test": "tests/storefront.spec.js:18:1 \u203a T: consent blocks analytics and allowed events avoid PII",
+        "duration": "2.2s",
+        "status": "passed"
+      }
+    ]
+  },
+  "limits": [
+    "Runner permission escalation required for Firefox content-process user namespaces.",
+    "Android/iOS are device emulations, not physical-device tests.",
+    "System Chromium does not establish actual Chrome or Edge testing.",
+    "Only demo payments and fixture inventory are tested."
+  ],
+  "final_style_regression": {
+    "command": "CROSS_BROWSER=true PLAYWRIGHT_BROWSERS_PATH=/workspace/playwright-browsers XDG_CONFIG_HOME=/workspace/browser-config XDG_CACHE_HOME=/workspace/browser-cache npm run test:e2e -- --grep 'A D H I J|K D:'",
+    "tests": 8,
+    "passed": 8,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0,
+    "reason": "Final Poppins overrides for selects/textareas and store editorial emphasis. Affected page loading, fonts and accessibility checks rerun across all four projects.",
+    "log": "font-accessibility-run.txt"
+  }
+}

@@ -1,0 +1,29 @@
+name: Ecommerce demo QA
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium firefox webkit
+      - run: npm run test:api
+      - run: npm run test:e2e
+        env:
+          CROSS_BROWSER: 'true'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-qa-results
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7

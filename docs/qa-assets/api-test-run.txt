@@ -1,0 +1,49 @@
+
+> jai-hind-sarees@1.0.0 test:api
+> node --test tests/api.test.js
+
+✔ health reports demo mode and catalog gives correct prices, MRP, unavailable stock (98.830054ms)
+✔ CSRF mutation and cross-origin requests are denied (36.690454ms)
+✔ registration stores salted hash and issues HttpOnly SameSite session (73.304805ms)
+✔ invalid registration and duplicate email are rejected (100.963134ms)
+✔ login, persisted session, wrong password and logout work (135.220431ms)
+✔ expired sessions cannot access orders (50.841314ms)
+✔ SQL injection does not bypass authentication (94.284748ms)
+✔ wishlists persist server-side and are isolated between accounts (116.841344ms)
+✔ newsletter validates email, consent and duplicate submission (20.694709ms)
+✔ quote calculates correct included tax, shipping and coupon discount (63.422825ms)
+✔ high-value cart receives free shipping and coupon cap (48.920484ms)
+✔ expired, invalid and stacked coupons are rejected (53.494538ms)
+✔ first-order coupon cannot be reused or used after an uncouponed order (121.890517ms)
+✔ quote enforces unavailable variants, invalid products, duplicate variants and quantities (75.218315ms)
+✔ checkout requires authenticated user and valid shipping address/PIN (625.858794ms)
+✔ tampered client prices are ignored and totals are recomputed (52.568575ms)
+✔ upi demo confirmation produces a stored order with no real payment (58.182932ms)
+✔ card demo confirmation produces a stored order with no real payment (63.30704ms)
+✔ wallet demo confirmation produces a stored order with no real payment (59.444311ms)
+✔ cod demo confirmation produces a stored order with no real payment (52.126553ms)
+✔ failed payment creates no order and no stock reduction (52.185617ms)
+✔ cancelled payment creates no order and no stock reduction (43.294109ms)
+✔ pending payment creates no order and no stock reduction (43.368396ms)
+✔ pending attempt can confirm once and duplicate/concurrent confirmation makes one order (47.491406ms)
+✔ failed attempt cannot be turned into an order with its old key (66.703336ms)
+✔ atomic stock checks prevent overselling and rollback leaves no order (92.295404ms)
+✔ customers cannot read or return another customer’s order (184.21067ms)
+✔ return is recorded once and refund remains not issued (84.347804ms)
+✔ non-returnable and expired returns are rejected (55.746851ms)
+✔ analytics rejects no-consent events and strips secrets/PII fields (90.259506ms)
+✔ purchase analytics needs a confirmed owned order and deduplicates event IDs (119.796099ms)
+✔ oversized bodies are rejected and security headers are present (14.885083ms)
+✔ search-engine indexing is blocked until a public origin is configured (9.268764ms)
+✔ unknown private order produces a useful 404 (129.539508ms)
+✔ rate limiting blocks repeated newsletter abuse (114.631812ms)
+✔ production HTTPS redirects and Secure cookies require trusted proxy configuration (12.32777ms)
+✔ unconfigured live-commerce mode cannot start (2.360575ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3585.354893

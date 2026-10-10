@@ -1,0 +1,138 @@
+
+> jai-hind-sarees@1.0.0 test
+> npm run test:api && npm run test:e2e
+
+
+> jai-hind-sarees@1.0.0 test:api
+> node --test tests/api.test.js
+
+✔ health reports demo mode and catalog gives correct prices, MRP, unavailable stock (92.561233ms)
+✔ CSRF mutation and cross-origin requests are denied (27.26639ms)
+✔ registration stores salted hash and issues HttpOnly SameSite session (69.618507ms)
+✔ invalid registration and duplicate email are rejected (104.552635ms)
+✔ login, persisted session, wrong password and logout work (140.465491ms)
+✔ expired sessions cannot access orders (52.203096ms)
+✔ SQL injection does not bypass authentication (47.956919ms)
+✔ wishlists persist server-side and are isolated between accounts (90.749253ms)
+✔ newsletter validates email, consent and duplicate submission (14.269963ms)
+✔ quote calculates correct included tax, shipping and coupon discount (48.181555ms)
+✔ high-value cart receives free shipping and coupon cap (49.838683ms)
+✔ expired, invalid and stacked coupons are rejected (50.732391ms)
+✔ first-order coupon cannot be reused or used after an uncouponed order (54.969988ms)
+✔ quote enforces unavailable variants, invalid products, duplicate variants and quantities (62.108468ms)
+✔ checkout requires authenticated user and valid shipping address/PIN (60.886642ms)
+✔ tampered client prices are ignored and totals are recomputed (49.627338ms)
+✔ upi demo confirmation produces a stored order with no real payment (51.127687ms)
+✔ card demo confirmation produces a stored order with no real payment (45.622374ms)
+✔ wallet demo confirmation produces a stored order with no real payment (45.346314ms)
+✔ cod demo confirmation produces a stored order with no real payment (48.254993ms)
+✔ failed payment creates no order and no stock reduction (49.087958ms)
+✔ cancelled payment creates no order and no stock reduction (47.409373ms)
+✔ pending payment creates no order and no stock reduction (50.6198ms)
+✔ pending attempt can confirm once and duplicate/concurrent confirmation makes one order (58.477873ms)
+✔ failed attempt cannot be turned into an order with its old key (49.783703ms)
+✔ atomic stock checks prevent overselling and rollback leaves no order (54.988341ms)
+✔ customers cannot read or return another customer’s order (87.513239ms)
+✔ return is recorded once and refund remains not issued (55.105167ms)
+✔ non-returnable and expired returns are rejected (53.95625ms)
+✔ analytics rejects no-consent events and strips secrets/PII fields (48.685869ms)
+✔ purchase analytics needs a confirmed owned order and deduplicates event IDs (52.90209ms)
+✔ oversized bodies are rejected and security headers are present (9.270117ms)
+✔ search-engine indexing is blocked until a public origin is configured (6.522964ms)
+✔ unknown private order produces a useful 404 (48.667543ms)
+✔ rate limiting blocks repeated newsletter abuse (47.793243ms)
+✔ production HTTPS redirects and Secure cookies require trusted proxy configuration (9.749264ms)
+✔ unconfigured live-commerce mode cannot start (3.032875ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2113.63161
+
+> jai-hind-sarees@1.0.0 test:e2e
+> playwright test
+
+[WebServer] (node:31931) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:31951) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 64 tests using 1 worker
+
+(node:31978) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-desktop] › tests/edge-cases.spec.js:5:1 › X Y: long translated names reflow and account markup is escaped (2.9s)
+  ✓   2 [chromium-desktop] › tests/edge-cases.spec.js:6:1 › L X: slow loading skeleton, zoom reflow and refresh during checkout preserve bag (7.5s)
+  ✓   3 [chromium-desktop] › tests/edge-cases.spec.js:7:1 › N T: duplicate newsletter clicks are suppressed and checkout events fire once (2.9s)
+  ✓   4 [chromium-desktop] › tests/edge-cases.spec.js:8:1 › K V: policy, empty drawer, form, checkout and zoom dialog states pass accessibility checks (17.6s)
+  ✓   5 [chromium-desktop] › tests/storefront.spec.js:7:1 › A D H I J: load, fonts, critical requests, imagery, section order, error-free homepage (4.4s)
+  ✓   6 [chromium-desktop] › tests/storefront.spec.js:8:1 › A B: dismiss strip persists; banners controls and pointer swipe work (1.6s)
+  ✓   7 [chromium-desktop] › tests/storefront.spec.js:9:1 › C F: categories, combinations, price filters, counts, empty fallback and all sorting modes (5.3s)
+  ✓   8 [chromium-desktop] › tests/storefront.spec.js:10:1 › E I J S: all product routes, variants, unavailable choices, zoom, search misspelling and history (7.8s)
+  ✓   9 [chromium-desktop] › tests/storefront.spec.js:11:1 › G K: menu/dropdowns, keyboard operation, Escape, focus trap and restored focus (3.5s)
+  ✓  10 [chromium-desktop] › tests/storefront.spec.js:12:1 › J U X: rapid click protection, cart persistence, safe corrupt storage, wishlist persistence (6.2s)
+  ✓  11 [chromium-desktop] › tests/storefront.spec.js:13:1 › N: newsletter consent, invalid, successful and duplicate messages accurately reflect server (2.1s)
+  ✓  12 [chromium-desktop] › tests/storefront.spec.js:14:1 › O P R U: register, buy now, coupon, pending then success, one order and return request (7.3s)
+  ✓  13 [chromium-desktop] › tests/storefront.spec.js:15:1 › M X: required viewport widths, landscape, 200% text zoom, long names and no overflow (4.3s)
+  ✓  14 [chromium-desktop] › tests/storefront.spec.js:16:1 › A L X: API interruption shows retry and recovers; offline image has useful fallback (2.9s)
+  ✓  15 [chromium-desktop] › tests/storefront.spec.js:17:1 › K D: axe keyboard/form/contrast checks on homepage, collection and product (11.1s)
+  ✓  16 [chromium-desktop] › tests/storefront.spec.js:18:1 › T: consent blocks analytics and allowed events avoid PII (4.3s)
+(node:33138) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  17 [chromium-android-emulation] › tests/edge-cases.spec.js:5:1 › X Y: long translated names reflow and account markup is escaped (4.5s)
+  ✓  18 [chromium-android-emulation] › tests/edge-cases.spec.js:6:1 › L X: slow loading skeleton, zoom reflow and refresh during checkout preserve bag (12.0s)
+  ✓  19 [chromium-android-emulation] › tests/edge-cases.spec.js:7:1 › N T: duplicate newsletter clicks are suppressed and checkout events fire once (7.9s)
+  ✓  20 [chromium-android-emulation] › tests/edge-cases.spec.js:8:1 › K V: policy, empty drawer, form, checkout and zoom dialog states pass accessibility checks (16.6s)
+  ✓  21 [chromium-android-emulation] › tests/storefront.spec.js:7:1 › A D H I J: load, fonts, critical requests, imagery, section order, error-free homepage (9.0s)
+  ✓  22 [chromium-android-emulation] › tests/storefront.spec.js:8:1 › A B: dismiss strip persists; banners controls and pointer swipe work (3.1s)
+  ✓  23 [chromium-android-emulation] › tests/storefront.spec.js:9:1 › C F: categories, combinations, price filters, counts, empty fallback and all sorting modes (4.5s)
+  ✓  24 [chromium-android-emulation] › tests/storefront.spec.js:10:1 › E I J S: all product routes, variants, unavailable choices, zoom, search misspelling and history (5.7s)
+  ✓  25 [chromium-android-emulation] › tests/storefront.spec.js:11:1 › G K: menu/dropdowns, keyboard operation, Escape, focus trap and restored focus (1.4s)
+  ✓  26 [chromium-android-emulation] › tests/storefront.spec.js:12:1 › J U X: rapid click protection, cart persistence, safe corrupt storage, wishlist persistence (2.3s)
+  ✓  27 [chromium-android-emulation] › tests/storefront.spec.js:13:1 › N: newsletter consent, invalid, successful and duplicate messages accurately reflect server (2.6s)
+  ✓  28 [chromium-android-emulation] › tests/storefront.spec.js:14:1 › O P R U: register, buy now, coupon, pending then success, one order and return request (4.4s)
+  ✓  29 [chromium-android-emulation] › tests/storefront.spec.js:15:1 › M X: required viewport widths, landscape, 200% text zoom, long names and no overflow (4.4s)
+  ✓  30 [chromium-android-emulation] › tests/storefront.spec.js:16:1 › A L X: API interruption shows retry and recovers; offline image has useful fallback (2.7s)
+  ✓  31 [chromium-android-emulation] › tests/storefront.spec.js:17:1 › K D: axe keyboard/form/contrast checks on homepage, collection and product (7.1s)
+  ✓  32 [chromium-android-emulation] › tests/storefront.spec.js:18:1 › T: consent blocks analytics and allowed events avoid PII (1.6s)
+(node:34127) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  33 [firefox] › tests/edge-cases.spec.js:5:1 › X Y: long translated names reflow and account markup is escaped (5.0s)
+  ✓  34 [firefox] › tests/edge-cases.spec.js:6:1 › L X: slow loading skeleton, zoom reflow and refresh during checkout preserve bag (4.2s)
+  ✓  35 [firefox] › tests/edge-cases.spec.js:7:1 › N T: duplicate newsletter clicks are suppressed and checkout events fire once (3.2s)
+  ✓  36 [firefox] › tests/edge-cases.spec.js:8:1 › K V: policy, empty drawer, form, checkout and zoom dialog states pass accessibility checks (15.2s)
+  ✓  37 [firefox] › tests/storefront.spec.js:7:1 › A D H I J: load, fonts, critical requests, imagery, section order, error-free homepage (2.6s)
+  ✓  38 [firefox] › tests/storefront.spec.js:8:1 › A B: dismiss strip persists; banners controls and pointer swipe work (2.2s)
+  ✓  39 [firefox] › tests/storefront.spec.js:9:1 › C F: categories, combinations, price filters, counts, empty fallback and all sorting modes (2.7s)
+  ✓  40 [firefox] › tests/storefront.spec.js:10:1 › E I J S: all product routes, variants, unavailable choices, zoom, search misspelling and history (6.5s)
+  ✓  41 [firefox] › tests/storefront.spec.js:11:1 › G K: menu/dropdowns, keyboard operation, Escape, focus trap and restored focus (1.8s)
+  ✓  42 [firefox] › tests/storefront.spec.js:12:1 › J U X: rapid click protection, cart persistence, safe corrupt storage, wishlist persistence (3.2s)
+  ✓  43 [firefox] › tests/storefront.spec.js:13:1 › N: newsletter consent, invalid, successful and duplicate messages accurately reflect server (2.2s)
+  ✓  44 [firefox] › tests/storefront.spec.js:14:1 › O P R U: register, buy now, coupon, pending then success, one order and return request (4.4s)
+  ✓  45 [firefox] › tests/storefront.spec.js:15:1 › M X: required viewport widths, landscape, 200% text zoom, long names and no overflow (2.4s)
+  ✓  46 [firefox] › tests/storefront.spec.js:16:1 › A L X: API interruption shows retry and recovers; offline image has useful fallback (1.2s)
+  ✓  47 [firefox] › tests/storefront.spec.js:17:1 › K D: axe keyboard/form/contrast checks on homepage, collection and product (9.6s)
+  ✓  48 [firefox] › tests/storefront.spec.js:18:1 › T: consent blocks analytics and allowed events avoid PII (1.8s)
+(node:35172) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  49 [webkit-ios-emulation] › tests/edge-cases.spec.js:5:1 › X Y: long translated names reflow and account markup is escaped (5.3s)
+  ✓  50 [webkit-ios-emulation] › tests/edge-cases.spec.js:6:1 › L X: slow loading skeleton, zoom reflow and refresh during checkout preserve bag (9.1s)
+  ✓  51 [webkit-ios-emulation] › tests/edge-cases.spec.js:7:1 › N T: duplicate newsletter clicks are suppressed and checkout events fire once (5.2s)
+  ✓  52 [webkit-ios-emulation] › tests/edge-cases.spec.js:8:1 › K V: policy, empty drawer, form, checkout and zoom dialog states pass accessibility checks (15.0s)
+  ✓  53 [webkit-ios-emulation] › tests/storefront.spec.js:7:1 › A D H I J: load, fonts, critical requests, imagery, section order, error-free homepage (7.5s)
+  ✓  54 [webkit-ios-emulation] › tests/storefront.spec.js:8:1 › A B: dismiss strip persists; banners controls and pointer swipe work (3.7s)
+  ✓  55 [webkit-ios-emulation] › tests/storefront.spec.js:9:1 › C F: categories, combinations, price filters, counts, empty fallback and all sorting modes (3.3s)
+  ✓  56 [webkit-ios-emulation] › tests/storefront.spec.js:10:1 › E I J S: all product routes, variants, unavailable choices, zoom, search misspelling and history (7.2s)
+  ✓  57 [webkit-ios-emulation] › tests/storefront.spec.js:11:1 › G K: menu/dropdowns, keyboard operation, Escape, focus trap and restored focus (2.5s)
+  ✓  58 [webkit-ios-emulation] › tests/storefront.spec.js:12:1 › J U X: rapid click protection, cart persistence, safe corrupt storage, wishlist persistence (5.6s)
+  ✓  59 [webkit-ios-emulation] › tests/storefront.spec.js:13:1 › N: newsletter consent, invalid, successful and duplicate messages accurately reflect server (2.9s)
+  ✓  60 [webkit-ios-emulation] › tests/storefront.spec.js:14:1 › O P R U: register, buy now, coupon, pending then success, one order and return request (5.2s)
+  ✓  61 [webkit-ios-emulation] › tests/storefront.spec.js:15:1 › M X: required viewport widths, landscape, 200% text zoom, long names and no overflow (8.3s)
+  ✓  62 [webkit-ios-emulation] › tests/storefront.spec.js:16:1 › A L X: API interruption shows retry and recovers; offline image has useful fallback (2.6s)
+  ✓  63 [webkit-ios-emulation] › tests/storefront.spec.js:17:1 › K D: axe keyboard/form/contrast checks on homepage, collection and product (6.2s)
+  ✓  64 [webkit-ios-emulation] › tests/storefront.spec.js:18:1 › T: consent blocks analytics and allowed events avoid PII (2.2s)
+
+  64 passed (6.0m)

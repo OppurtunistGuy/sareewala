@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-10",
+  "method": "Sequential Lighthouse lab runs after browser regression completed, on a fresh local built SSR/compression server. Cold browser profiles; no real-user sample distribution.",
+  "command_mobile": "CHROME_PATH=/usr/bin/chromium npx lighthouse http://127.0.0.1:4184 --chrome-flags='--headless --no-sandbox' --only-categories=performance,accessibility,best-practices,seo --output=json --quiet",
+  "command_desktop": "Same command with --preset=desktop.",
+  "exitCodes": {
+    "mobile": 0,
+    "desktop": 0
+  },
+  "profiles": {
+    "mobile": {
+      "fetchTime": "2026-10-10T11:34:10.731Z",
+      "lighthouseVersion": "13.5.0",
+      "formFactor": "mobile",
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "LCP_ms": 2381.430625,
+      "CLS": 0.01099674969730833,
+      "TBT_ms": 33.5,
+      "field_INP_ms": null
+    },
+    "desktop": {
+      "fetchTime": "2026-10-10T11:34:46.696Z",
+      "lighthouseVersion": "13.5.0",
+      "formFactor": "desktop",
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "LCP_ms": 567.8666249999999,
+      "CLS": 0.003848995449075579,
+      "TBT_ms": 0,
+      "field_INP_ms": null
+    }
+  },
+  "limitations": [
+    "Lab results do not prove p75 field LCP, INP or CLS.",
+    "TBT is not INP.",
+    "Demo intentionally remains noindex/nofollow; SEO score 66 is not a production SEO pass.",
+    "Physical iOS/Android and actual production network/hosting were not measured."
+  ]
+}

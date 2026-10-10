@@ -1,0 +1,183 @@
+Sudathi Ecommerce QA Checklist
+
+A. App & Initial Load
+[ ] Homepage loads without blank screens or crashes
+[ ] Logo, navigation, banners and product images render correctly
+[ ] No console errors or failed critical network requests
+[ ] App promotion strip displays correctly and can be dismissed
+[ ] Refresh and direct URL visits work without errors
+
+B. Banners & Promotions
+[ ] Hero images are sharp and correctly cropped on all screens
+[ ] Every promotional CTA navigates to its intended destination
+[ ] Carousel controls, swipe gestures and indicators work
+[ ] Sale claims, discount percentages and offer dates are accurate
+[ ] No text overlaps or clipped promotional content
+
+C. Categories & Collections
+[ ] Women, Men, Kids and other category links work
+[ ] Category images and labels match their destination
+[ ] Product listings show the correct category
+[ ] Filters and sorting update results correctly
+[ ] Empty collections show a useful fallback
+
+D. Design Consistency
+[ ] Poppins is applied consistently, including after font loading
+[ ] Deep blue, white and yellow match the design system
+[ ] Buttons, spacing, radii and typography are consistent
+[ ] Hover, focus, active, loading and disabled states are polished
+[ ] No layout shifts, stretched photos or overlapping components
+
+E. E-commerce Product Experience
+[ ] Product cards show correct names, images and prices
+[ ] Product detail pages open for every active item
+[ ] Size, colour and variant selection work correctly
+[ ] Unavailable variants cannot be purchased
+[ ] Add to Cart and Buy Now perform the correct actions
+
+F. Filters & Sorting
+[ ] Price, size, colour and category filters work
+[ ] Multiple filters can be combined and cleared
+[ ] Sorting by price, newest and popularity is correct
+[ ] Result counts update after filtering
+[ ] Filters remain usable on mobile
+
+G. Global Navigation
+[ ] Header links and logo navigate correctly
+[ ] Search, account, wishlist and cart icons work
+[ ] Mobile menu opens, closes and navigates correctly
+[ ] Dropdown menus work with mouse, touch and keyboard
+[ ] Sticky header does not obscure content
+
+H. Homepage Sections
+[ ] Every section matches the approved visual design
+[ ] Sections appear in the correct order
+[ ] Top Picks, sale banners and collection grids populate
+[ ] Trust badges and promotional messaging are accurate
+[ ] No duplicate, empty or broken homepage modules
+
+I. Images & Media
+[ ] All product and lifestyle images load successfully
+[ ] Responsive images use appropriate sizes and formats
+[ ] Lazy loading works without leaving blank cards
+[ ] Image zoom or galleries work where implemented
+[ ] Meaningful images have appropriate alt text
+
+J. JavaScript & Interactions
+[ ] No uncaught JavaScript exceptions
+[ ] No hydration warnings or broken interactive components
+[ ] Rapid clicks do not duplicate actions
+[ ] Dialogs, menus and drawers open and close reliably
+[ ] Back and forward browser navigation work correctly
+
+K. Keyboard Accessibility
+[ ] All actionable elements are keyboard reachable
+[ ] Tab order follows the visual layout
+[ ] Focus indicators are visible
+[ ] Escape closes dialogs and menus where appropriate
+[ ] No keyboard traps occur
+
+L. Loading & Performance
+[ ] Core Web Vitals are measured on mobile and desktop
+[ ] LCP target is 2.5 seconds or less at the 75th percentile
+[ ] INP target is 200 ms or less at the 75th percentile
+[ ] CLS target is 0.1 or less at the 75th percentile
+[ ] Slow connections show usable loading and error states
+
+M. Mobile Responsiveness
+[ ] Layouts work at 320, 360, 375, 390 and 430 px
+[ ] No unwanted horizontal scrolling
+[ ] Text, product cards and CTAs remain readable
+[ ] Tap targets are large enough and spaced correctly
+[ ] Mobile search, menu, filters and checkout are usable
+
+N. Newsletter & Notifications
+[ ] Newsletter accepts valid email addresses
+[ ] Invalid and duplicate submissions are handled
+[ ] Success and failure messages are accurate
+[ ] Submission does not create duplicate requests
+[ ] Marketing consent is collected where required
+
+O. Offers & Discounts
+[ ] MRP, selling price and discount calculation agree
+[ ] Coupon eligibility and expiry rules are enforced
+[ ] Coupon cannot be redeemed beyond permitted limits
+[ ] Offer stacking follows configured business rules
+[ ] Cart and checkout totals reflect valid discounts
+
+P. Payments & Checkout
+[ ] Shipping address and PIN code validation work
+[ ] Shipping charges and taxes calculate correctly
+[ ] UPI, cards, wallets or COD work where enabled
+[ ] Failed, cancelled and pending payments are handled safely
+[ ] One successful payment produces exactly one order
+
+Q. Quality & Content
+[ ] No spelling mistakes or placeholder content
+[ ] Product descriptions and specifications are accurate
+[ ] Sizes, fabric and care information are available
+[ ] Promotional claims and ratings are substantiated
+[ ] No dead links or outdated policy text
+
+R. Returns & Refunds
+[ ] Return policy and eligibility are clearly shown
+[ ] Return request workflow works where supported
+[ ] Refund status reflects backend records accurately
+[ ] Non-returnable products are labelled correctly
+[ ] Support and order-help links work
+
+S. Search & SEO
+[ ] Search returns relevant products and suggestions
+[ ] Misspellings and no-results searches are handled
+[ ] Page titles and meta descriptions are unique
+[ ] Canonical URLs, sitemap and robots rules are correct
+[ ] Product structured data uses valid real product details
+
+T. Tracking & Analytics
+[ ] Page view, product view and search events fire correctly
+[ ] Add-to-cart and begin-checkout events fire once
+[ ] Purchase events fire only for confirmed orders
+[ ] Analytics never exposes passwords or payment secrets
+[ ] Consent preferences are respected
+
+U. User Accounts & Wishlist
+[ ] Login, registration and logout work
+[ ] OTP or password reset works if supported
+[ ] Account sessions persist and expire correctly
+[ ] Wishlist add/remove and persistence work
+[ ] Users cannot access another customer's account or orders
+
+V. Visual Regression
+[ ] Desktop screenshots match approved reference layouts
+[ ] Mobile screenshots match approved reference layouts
+[ ] No accidental typography or spacing regressions
+[ ] All modal, error, hover and empty states are reviewed
+[ ] Image crops and banners remain consistent after changes
+
+W. Web Browser Compatibility
+[ ] Chrome and Edge desktop flows work
+[ ] Firefox desktop flows work
+[ ] Safari on iOS works
+[ ] Chrome on Android works
+[ ] Touch, mouse, keyboard and browser back work
+
+X. Cross-device Edge Cases
+[ ] Portrait and landscape layouts work
+[ ] Zoom at 200% does not hide essential functions
+[ ] Long names and translated text do not overflow
+[ ] Slow or interrupted network requests recover gracefully
+[ ] Refresh during cart or checkout does not corrupt state
+
+Y. Your Security & Data
+[ ] HTTPS is enforced and no mixed content loads
+[ ] Sensitive API keys are not exposed in frontend bundles
+[ ] Authentication and authorisation are enforced server-side
+[ ] Forms and APIs resist common injection and XSS attacks
+[ ] Payments, personal data and logs follow applicable privacy rules
+
+Z. Zero-critical-defect Launch Gate
+[ ] All critical shopping journeys pass end to end
+[ ] No open P0 or P1 defects remain
+[ ] No broken critical links or missing product assets
+[ ] Monitoring, backups and rollback procedures are ready
+[ ] Production smoke tests pass after deployment

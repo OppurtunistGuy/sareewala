@@ -1,0 +1,3 @@
+import {DatabaseSync} from 'node:sqlite';
+const db=new DatabaseSync(process.env.DB_PATH||'data/store.sqlite',{readOnly:true});const rows=db.prepare("SELECT data FROM events WHERE event='web_vital'").all().map(r=>JSON.parse(r.data));db.close();
+for(const metric of ['LCP','INP','CLS']){const values=rows.filter(r=>r.metric===metric).map(r=>r.value).sort((a,b)=>a-b);if(!values.length){console.log(metric+': no field samples; 75th-percentile readiness is unverified.');continue}const p75=values[Math.ceil(values.length*.75)-1];console.log(`${metric}: ${values.length} consented samples, p75=${p75}. Validate real-user device distribution before a launch claim.`)}
