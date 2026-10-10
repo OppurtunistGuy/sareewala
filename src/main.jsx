@@ -8,7 +8,7 @@ const collections=[{name:'Everyday elegance',sub:'Light, lovely & made for you',
 const storeName='Jai Hind Saree Centre';
 const storeAddress='Shop No 106, Main Bazar, Pimpri, Pune, Maharashtra 411017';
 const directionsUrl='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(storeName+', '+storeAddress);
-const mapsUrl='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(storeName+', '+storeAddress);
+const mapsUrl='https://maps.app.goo.gl/gKjPygNjHQbdbp6v5';
 function App(){const [showAll,setShowAll]=useState(false),[filter,setFilter]=useState('All Sarees'),[query,setQuery]=useState(''),[searchOpen,setSearchOpen]=useState(false),[liked,setLiked]=useState(()=>JSON.parse(localStorage.getItem('jaihind-wishlist')||'[]')),[bag,setBag]=useState(()=>JSON.parse(localStorage.getItem('jaihind-bag')||'[]')),[panel,setPanel]=useState(null),[selected,setSelected]=useState(null),[menu,setMenu]=useState(false),[toast,setToast]=useState(''),[slide,setSlide]=useState(0),[email,setEmail]=useState(''),[subscribed,setSubscribed]=useState(false);
 const notify=m=>{setToast(m);setTimeout(()=>setToast(''),3000)};
 const toggle=id=>{const v=liked.includes(id)?liked.filter(x=>x!==id):[...liked,id];setLiked(v);localStorage.setItem('jaihind-wishlist',JSON.stringify(v))};

@@ -38,6 +38,6 @@ Cloud tasks already run in isolated environments; use this existing checkout wit
 - Shop name: Jai Hind Saree Centre
 - Address: Shop No 106, Main Bazar, Pimpri, Pune, Maharashtra 411017
 
-The name and address above were provided by the user. Google and Bing lookup attempts returned HTTP 403 from the cloud egress proxy on 2026-10-10. Phone number, opening hours, Google ratings, and a verified Google Place ID are not available and are not invented. Google Maps links use the supplied business name and full address as a search/directions query; they are not a verified listing link.
+The name and address above were provided by the user. Google and Bing lookup attempts returned HTTP 403 from the cloud egress proxy on 2026-10-10. Phone number, opening hours, Google ratings, and a verified Google Place ID are not available and are not invented. The user supplied the Google Maps listing link https://maps.app.goo.gl/gKjPygNjHQbdbp6v5. The "Find us on Google Maps" link opens this listing, and business structured data includes it as hasMap. Directions buttons continue to use the full address as a Google Maps directions query. Fetching the supplied short link also returned HTTP 403; phone numbers, hours, ratings, and the listing contents have not been independently verified.
 
 The header, store strip, visit section, contact dialog, footer, page metadata, and local-storage keys use the Jai Hind branding.
